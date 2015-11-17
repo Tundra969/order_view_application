@@ -1,15 +1,7 @@
 .order-container {
-    margin: 2px 0;
-    padding: 10px 50px;
+    margin: 10px 0;
+    padding: 15px 50px;
     background-color: #e9e7d0;
-    border: 1px solid #091559;
-}
-
-header {
-     border: 1px solid #091559;
-}
-
-footer {
     border: 1px solid #091559;
 }
 
@@ -17,6 +9,7 @@ footer {
     margin-bottom: 10px;
 }
 
-.container {
+.container-fluid {
     margin-top: 10px;
+    padding-top: 10px;
 }
