@@ -1,24 +1,17 @@
-<p>Welcome to the homepage!</p>
-<p>Here are some addresses: {{thing}}</p>
+<div class="container">
+    <form name="myForm">
+        <label>Select Name</label><br>
+        <select ng-model="currentName" ng-options="option.name for option in nameArray" ng-change="getAddress(currentName)">
+        </select>
+    </form>
 
+    <p>You Have Selected: {{currentName.name}}</p>
 
-<!--Drop down/select list of all users-->
-<div ng-controller="DropDownController">
-    <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            {{selectedItem}}
-            <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li ng-repeat="a in subjects"><a ng-click="dropboxitemselected(a)">{{a}}</a></li>
-        </ul>
+    <div ng-repeat="address in addressArray">
+        <div class="order-container">
+            <h3>{{address.address_type}} Address:</h3>
+            <p>{{address.address_street}}</p>
+            <p>{{address.address_city}}, {{address.address_state}} {{address.address_zip}}</p>
+        </div>
     </div>
 </div>
-
-
-<!--When one is selected, display all of their addresses-->
-
-
-
-
-<!--Format the addresses nicely like a real address with line breaks, spaces, etc.-->

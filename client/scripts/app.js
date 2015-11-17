@@ -1,15 +1,14 @@
-//var pg = require('pg');
 var myApp = angular.module("myApp", ['ngRoute']);
 
 myApp.config(['$routeProvider', function($routeProvider){
     $routeProvider.
     when('/address', {
         templateUrl: "/assets/views/routes/address.html",
-        controller: "addressController"
+        controller: "AddressController"
     }).
     when('/order', {
         templateUrl: "/assets/views/routes/order.html",
-        controller: "orderController"
+        controller: "OrderController"
     }).
     otherwise({
         redirectTo: 'address'

@@ -1,24 +1,25 @@
-myApp.controller('addressController', ['$scope', function($scope){
-    console.log("Address Controller");
-    $scope.thing = "Addresses here";
+myApp.controller('AddressController', ['$scope', '$http', function($scope, $http){
+    $scope.currentName = {};
+    $scope.nameArray = [];
+    $scope.addressArray = [];
+
+
+    $scope.getName = function(){
+        $http.get('/name').then(function(response){
+            console.log(response.data);
+            $scope.nameArray = response.data;
+        });
+    };
+
+
+    $scope.getAddress = function(data){
+        console.log(data);
+        $http.get('/address', {params: {name: data.name, id: data.id}}).then(function(response){
+            console.log(response.data);
+            $scope.addressArray = response.data;
+        });
+    };
+
+    $scope.getName();
+
 }]);
-
-
-//Drop down/select list of all users
-myApp.controller('DropDownController', ['$scope', function ($scope) {
-
-    $scope.subjects = ['Math', 'Physics', 'Chemistry', 'Hindi', 'English'];
-    $scope.selectedItem;
-    $scope.dropboxitemselected = function (item) {
-
-        $scope.selectedItem = item;
-        alert($scope.selectedItem);
-    }
-}]);
-
-//When one is selected, display all of their addresses
-
-//-- Generic JOIN syntax. This will show the user’s names and their addresses
-//SELECT users.name, addresses.* FROM users JOIN addresses ON users.id = addresses.user_id;
-
-//Format the addresses nicely like a real address with line breaks, spaces, etc.
