@@ -1,3 +1,4 @@
+//var pg = require('pg');
 var myApp = angular.module("myApp", ['ngRoute']);
 
 myApp.config(['$routeProvider', function($routeProvider){

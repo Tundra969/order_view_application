@@ -1,1 +1,31 @@
 <p>Here are your orders: {{thing}}</p>
+
+<!--Drop down/select list of all users-->
+<div ng-controller="DropDownController">
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            {{selectedItem}}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li ng-repeat="a in subjects"><a ng-click="dropboxitemselected(a)">{{a}}</a></li>
+
+        </ul>
+    </div>
+</div>
+
+
+<!--Input fields for Start Date and End Date-->
+
+
+<!--When one is selected, display all of the orders for this user within the date range given in a table. Also blow out the data to display:-->
+
+<!--All orders fields-->
+
+<!--Include address street, city, state, and zip for that order-->
+
+<!--Include user’s name-->
+
+<!--Sum the total amount spent at the bottom for only the selected orders-->
+
+<!--Make sure the amount fields have a dollar sign and proper commas and formatting-->
